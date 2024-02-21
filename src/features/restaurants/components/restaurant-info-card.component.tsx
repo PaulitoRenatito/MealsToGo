@@ -1,6 +1,17 @@
 import React from "react";
-import { StyleSheet } from 'react-native';
-import { Card, Text } from 'react-native-paper';
+import { Card } from 'react-native-paper';
+import styled from "styled-components/native";
+
+const RestaurantCard = styled(Card)`
+    background-color: white;
+`;
+const RestaurantCardCover = styled(Card.Cover)`
+    padding: 10px;
+    background-color: transparent;
+`;
+const Title = styled.Text`
+    padding: 14px;
+`;
 
 interface RestaurantInfoCardProps {
     restaurant?: {
@@ -29,22 +40,11 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = ({ restaura
     } = restaurant;
 
     return (
-        <Card elevation={5} style={styles.card}>
-            <Card.Cover style={styles.cover} source={{ uri: photos[0] }} />
+        <RestaurantCard elevation={5}>
+            <RestaurantCardCover source={{ uri: photos[0] }} />
             <Card.Content>
-                <Text variant="titleLarge">{name}</Text>
-                <Text variant="bodyMedium">{address}</Text>
+                <Title>{name}</Title>
             </Card.Content>
-        </Card>
+        </RestaurantCard>
     );
 }
-
-const styles = StyleSheet.create({
-    card: {
-        backgroundColor: 'white'
-    },
-    cover: {
-        padding: 10,
-        backgroundColor: 'transparent',
-    },
-});
