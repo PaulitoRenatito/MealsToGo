@@ -1,17 +1,17 @@
 import React from "react";
-import { Card } from 'react-native-paper';
-import styled from "styled-components/native";
+import { SvgXml } from 'react-native-svg';
 
-const RestaurantCard = styled(Card)`
-    background-color: white;
-`;
-const RestaurantCardCover = styled(Card.Cover)`
-    padding: 10px;
-    background-color: transparent;
-`;
-const Title = styled.Text`
-    padding: 14px;
-`;
+import star from '../../../../assets/star';
+import open from '../../../../assets/open';
+import { Text } from "../../../components/typography/text.component";
+import {
+    RestaurantCard,
+    RestaurantCardCover,
+    Info,
+    Section,
+    Rating,
+    OpenIndicator,
+} from "./restaurant-info-card.styles"
 
 interface RestaurantInfoCardProps {
     restaurant?: {
@@ -24,7 +24,6 @@ interface RestaurantInfoCardProps {
         isClosedTemporarily?: boolean;
     };
 }
-
 export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = ({ restaurant = {} }) => {
 
     const {
@@ -36,15 +35,40 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = ({ restaura
         address = '100 some random street',
         isOpenNow = true,
         rating = 4,
-        isClosedTemporarily,
+        isClosedTemporarily = false,
     } = restaurant;
+
+    const ratingArray = Array.from(new Array(Math.floor(rating)));
 
     return (
         <RestaurantCard elevation={5}>
             <RestaurantCardCover source={{ uri: photos[0] }} />
-            <Card.Content>
-                <Title>{name}</Title>
-            </Card.Content>
+            <Info>
+                <Text variant="label">{name}</Text>
+                <Section>
+                    <Rating>
+                        {ratingArray.map((_item, index) => (
+                            <SvgXml key={index} xml={star} width={20} height={20} />
+                        ))}
+                    </Rating>
+                    <OpenIndicator>
+                        {isClosedTemporarily &&
+                            <Text variant="error">
+                                CLOSED TEMPORARILY
+                            </Text>
+                        }
+                        {isOpenNow && <SvgXml
+                            xml={open}
+                            width={30}
+                            height={30}
+                            fill={'transparent'}
+                            stroke={'green'}
+                            strokeWidth={3}
+                        />}
+                    </OpenIndicator>
+                </Section>
+                <Text variant="caption">{address}</Text>
+            </Info>
         </RestaurantCard>
     );
 }

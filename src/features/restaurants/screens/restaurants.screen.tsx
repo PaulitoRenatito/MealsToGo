@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import {
+    FlatList,
     Platform,
     SafeAreaView,
     StatusBar,
-    StyleSheet,
     View
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
@@ -17,13 +17,12 @@ const SafeArea = styled(SafeAreaView)`
     margin-top: ${isAndroid ? StatusBar.currentHeight : 0}px;
 `;
 const SearchContainer = styled(View)`
-    padding: 16px;
+    padding: ${({ theme }) => theme.space.px16};
 `;
-const RestaurantListContainer = styled(View)`
-    flex: 1;
-    padding: 16px;
-    background-color: blue;
-`;
+// const RestaurantListContainer = styled(View)`
+//     flex: 1;
+//     padding: ${({ theme }) => theme.space.px16};
+// `;
 
 export const RestaurantsScreen = () => {
 
@@ -38,12 +37,15 @@ export const RestaurantsScreen = () => {
                     value={searchQuery}
                     mode='view'
                     elevation={1}
-                    style={{backgroundColor: 'white'}}
+                    style={{ backgroundColor: 'white' }}
                 />
             </SearchContainer>
-            <RestaurantListContainer>
-                <RestaurantInfoCard />
-            </RestaurantListContainer>
+            <FlatList
+                data={[{name: 1}, {name: 2}, {name: 3}, {name: 4}]}
+                renderItem={() => <RestaurantInfoCard />}
+                keyExtractor={(item) => item.name.toString()}
+                contentContainerStyle={{ padding: 16 }}
+            />
         </SafeArea>
     );
 }
