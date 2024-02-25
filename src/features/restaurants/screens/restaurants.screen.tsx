@@ -1,28 +1,16 @@
 import { useState } from 'react';
 import {
     FlatList,
-    Platform,
-    SafeAreaView,
-    StatusBar,
-    View
+    View,
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { RestaurantInfoCard } from '../components/restaurant-info-card.component';
 import styled from 'styled-components/native';
+import { SafeArea } from '../../../components/safe-area.component';
 
-const isAndroid = Platform.OS === 'android';
-
-const SafeArea = styled(SafeAreaView)`
-    flex: 1;
-    margin-top: ${isAndroid ? StatusBar.currentHeight : 0}px;
-`;
 const SearchContainer = styled(View)`
     padding: ${({ theme }) => theme.space.px16};
 `;
-// const RestaurantListContainer = styled(View)`
-//     flex: 1;
-//     padding: ${({ theme }) => theme.space.px16};
-// `;
 
 export const RestaurantsScreen = () => {
 
