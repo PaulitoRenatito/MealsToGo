@@ -1,0 +1,22 @@
+{
+    "results": [
+        {
+            "name": "Restaurant Toronto 1",
+            "address": "Toronto Address 1",
+            "rating": 4.7,
+            "opening_hours": {
+                "open_now": true
+            },
+            "business_status": "OPERATIONAL"
+        },
+        {
+            "name": "Restaurant Toronto 2",
+            "address": "Toronto Address 2",
+            "rating": 4.2,
+            "opening_hours": {
+                "open_now": true
+            },
+            "business_status": "OPERATIONAL"
+        }
+    ]
+}

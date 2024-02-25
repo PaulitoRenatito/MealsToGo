@@ -1,0 +1,22 @@
+{
+    "results": [
+        {
+            "name": "Restaurant San Francisco 1",
+            "address": "San Francisco Address 1",
+            "rating": 4.6,
+            "opening_hours": {
+                "open_now": true
+            },
+            "business_status": "OPERATIONAL"
+        },
+        {
+            "name": "Restaurant San Francisco 2",
+            "address": "San Francisco Address 2",
+            "rating": 4.0,
+            "opening_hours": {
+                "open_now": true
+            },
+            "business_status": "OPERATIONAL"
+        }
+    ]
+}

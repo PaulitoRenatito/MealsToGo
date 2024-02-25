@@ -1,0 +1,22 @@
+{
+    "results": [
+        {
+            "name": "Restaurant Antwerp 1",
+            "address": "Antwerp Address 1",
+            "rating": 4.5,
+            "opening_hours": {
+                "open_now": true
+            },
+            "business_status": "OPERATIONAL"
+        },
+        {
+            "name": "Restaurant Antwerp 2",
+            "address": "Antwerp Address 2",
+            "rating": 3.8,
+            "opening_hours": {
+                "open_now": false
+            },
+            "business_status": "CLOSED_TEMPORARILY"
+        }
+    ]
+}
