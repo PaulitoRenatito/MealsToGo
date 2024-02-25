@@ -1,7 +1,5 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ReactNode } from "react";
 import { Ionicons } from "@expo/vector-icons";
-import { ParamListBase, RouteProp } from '@react-navigation/native';
 
 type IconType = keyof typeof Ionicons.glyphMap;
 
@@ -31,6 +29,7 @@ const createScreenOptions = ({ route }: any) => {
 
     return {
         tabBarIcon: tabBarIcon(icon),
+        headerShown: false,
     }
 }
 
