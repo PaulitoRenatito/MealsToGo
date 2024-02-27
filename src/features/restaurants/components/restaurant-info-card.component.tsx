@@ -28,13 +28,10 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = ({ restaura
 
     const {
         name = 'Some Restaurant',
-        icon,
-        photos = [
-            "https://a.cdn-hotels.com/gdcs/production107/d1469/cd36c828-5e95-440f-a8ca-2542627a6d67.jpg?impolicy=fcrop&w=800&h=533&q=medium",
-        ],
         address = '100 some random street',
-        isOpenNow = true,
         rating = 4,
+        photos = [],
+        isOpenNow = true,
         isClosedTemporarily = false,
     } = restaurant;
 

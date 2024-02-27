@@ -4,6 +4,7 @@
             "name": "Restaurant Antwerp 1",
             "address": "Antwerp Address 1",
             "rating": 4.5,
+            "photos": [],
             "opening_hours": {
                 "open_now": true
             },
@@ -13,6 +14,7 @@
             "name": "Restaurant Antwerp 2",
             "address": "Antwerp Address 2",
             "rating": 3.8,
+            "photos": [],
             "opening_hours": {
                 "open_now": false
             },

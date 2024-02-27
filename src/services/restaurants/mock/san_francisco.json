@@ -4,6 +4,7 @@
             "name": "Restaurant San Francisco 1",
             "address": "San Francisco Address 1",
             "rating": 4.6,
+            "photos": [],
             "opening_hours": {
                 "open_now": true
             },
@@ -13,6 +14,37 @@
             "name": "Restaurant San Francisco 2",
             "address": "San Francisco Address 2",
             "rating": 4.0,
+            "photos": [],
+            "opening_hours": {
+                "open_now": false
+            },
+            "business_status": "CLOSED_TEMPORARILY"
+        },
+        {
+            "name": "Restaurant San Francisco 3",
+            "address": "San Francisco Address 3",
+            "rating": 2.2,
+            "photos": [],
+            "opening_hours": {
+                "open_now": true
+            },
+            "business_status": "OPERATIONAL"
+        },
+        {
+            "name": "Restaurant San Francisco 4",
+            "address": "San Francisco Address 4",
+            "rating": 4.5,
+            "photos": [],
+            "opening_hours": {
+                "open_now": false
+            },
+            "business_status": "CLOSED_TEMPORARILY"
+        },
+        {
+            "name": "Restaurant San Francisco 5",
+            "address": "San Francisco Address 5",
+            "rating": 3.8,
+            "photos": [],
             "opening_hours": {
                 "open_now": true
             },

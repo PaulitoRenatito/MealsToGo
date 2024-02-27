@@ -4,6 +4,7 @@
             "name": "Restaurant Chicago 1",
             "address": "Chicago Address 1",
             "rating": 4.3,
+            "photos": [],
             "opening_hours": {
                 "open_now": true
             },
@@ -13,6 +14,7 @@
             "name": "Restaurant Chicago 2",
             "address": "Chicago Address 2",
             "rating": 3.9,
+            "photos": [],
             "opening_hours": {
                 "open_now": false
             },
