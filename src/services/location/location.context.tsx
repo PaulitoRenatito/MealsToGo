@@ -6,8 +6,8 @@ interface LocationContextType {
     location: LatLng | null;
     isLoading: boolean;
     error: any;
-    search: (searchKeyword: LocationKey) => void;
-    keyword: LocationKey;
+    search: (searchKeyword: string) => void;
+    keyword: string;
 };
 export const LocationContext = createContext<LocationContextType | null>(null);
 
@@ -16,11 +16,13 @@ export const LocationContextProvider = ({ children }: { children: ReactNode }) =
     const [location, setLocation] = useState<LatLng | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<any>(null);
-    const [keyword, setKeyword] = useState<LocationKey>("san francisco");
+    const [keyword, setKeyword] = useState<string>("san francisco");
 
-    const onSearch = (searchKeyword: LocationKey) => {
+    const onSearch = (searchKeyword: string) => {
         setIsLoading(true);
         setKeyword(searchKeyword);
+
+        if (!searchKeyword.length) return;
 
         locationRequest(searchKeyword.toLowerCase() as LocationKey)
             .then(locationTransform)
