@@ -22,20 +22,26 @@ export const LocationContextProvider = ({ children }: { children: ReactNode }) =
         setIsLoading(true);
         setKeyword(searchKeyword);
 
-        if (!searchKeyword.length) return;
 
-        locationRequest(searchKeyword.toLowerCase().trim() as LocationKey)
+    }
+
+    useEffect(() => {
+
+        if (!keyword.length) return;
+
+        locationRequest(keyword.toLowerCase().trim() as LocationKey)
             .then(locationTransform)
             .then((result) => {
                 setIsLoading(false);
                 setLocation(result);
-                
+
             })
             .catch((error) => {
                 setIsLoading(false);
                 setError(error);
             });
-    }
+
+    }, [keyword]);
 
     return (
         <LocationContext.Provider

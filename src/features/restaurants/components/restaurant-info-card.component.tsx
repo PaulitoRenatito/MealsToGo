@@ -45,7 +45,12 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = ({ restaura
                 <Section>
                     <Rating>
                         {ratingArray.map((_item, index) => (
-                            <SvgXml key={index} xml={star} width={20} height={20} />
+                            <SvgXml
+                                key={`star-${name}-${index}`}
+                                xml={star}
+                                width={20}
+                                height={20}
+                            />
                         ))}
                     </Rating>
                     <OpenIndicator>

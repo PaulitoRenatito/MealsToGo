@@ -2,7 +2,7 @@
     "results": [
         {
             "name": "Restaurant Toronto 1",
-            "address": "Toronto Address 1",
+            "vicinity": "Toronto Address 1",
             "rating": 4.7,
             "photos": [],
             "opening_hours": {
@@ -12,7 +12,7 @@
         },
         {
             "name": "Restaurant Toronto 2",
-            "address": "Toronto Address 2",
+            "vicinity": "Toronto Address 2",
             "rating": 4.2,
             "photos": [],
             "opening_hours": {

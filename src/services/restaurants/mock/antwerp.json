@@ -2,7 +2,7 @@
     "results": [
         {
             "name": "Restaurant Antwerp 1",
-            "address": "Antwerp Address 1",
+            "vicinity": "Antwerp Address 1",
             "rating": 4.5,
             "photos": [],
             "opening_hours": {
@@ -12,7 +12,7 @@
         },
         {
             "name": "Restaurant Antwerp 2",
-            "address": "Antwerp Address 2",
+            "vicinity": "Antwerp Address 2",
             "rating": 3.8,
             "photos": [],
             "opening_hours": {

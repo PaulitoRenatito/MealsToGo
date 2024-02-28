@@ -2,7 +2,7 @@
     "results": [
         {
             "name": "Restaurant San Francisco 1",
-            "address": "San Francisco Address 1",
+            "vicinity": "San Francisco Address 1",
             "rating": 4.6,
             "photos": [],
             "opening_hours": {
@@ -12,7 +12,7 @@
         },
         {
             "name": "Restaurant San Francisco 2",
-            "address": "San Francisco Address 2",
+            "vicinity": "San Francisco Address 2",
             "rating": 4.0,
             "photos": [],
             "opening_hours": {
@@ -22,7 +22,7 @@
         },
         {
             "name": "Restaurant San Francisco 3",
-            "address": "San Francisco Address 3",
+            "vicinity": "San Francisco Address 3",
             "rating": 2.2,
             "photos": [],
             "opening_hours": {
@@ -32,7 +32,7 @@
         },
         {
             "name": "Restaurant San Francisco 4",
-            "address": "San Francisco Address 4",
+            "vicinity": "San Francisco Address 4",
             "rating": 4.5,
             "photos": [],
             "opening_hours": {
@@ -42,7 +42,7 @@
         },
         {
             "name": "Restaurant San Francisco 5",
-            "address": "San Francisco Address 5",
+            "vicinity": "San Francisco Address 5",
             "rating": 3.8,
             "photos": [],
             "opening_hours": {
