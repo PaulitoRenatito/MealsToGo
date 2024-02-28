@@ -12,6 +12,7 @@ import { Text } from 'react-native';
 import { SafeArea } from './src/components/safe-area.component';
 import { TabNavigator } from './src/components/navigation/tab-navigator.component';
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context';
+import { LocationContextProvider } from './src/services/location/location.context';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,36 +34,38 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <TabNavigator Tab={Tab}>
-              <Tab.Screen
-                name='Restaurants'
-                component={RestaurantsScreen}
-                options={{
-                  tabBarActiveTintColor: 'tomato',
-                  tabBarInactiveTintColor: 'gray'
-                }}
-              />
-              <Tab.Screen
-                name='Map'
-                component={Map}
-                options={{
-                  tabBarActiveTintColor: 'tomato',
-                  tabBarInactiveTintColor: 'gray'
-                }}
-              />
-              <Tab.Screen
-                name='Settings'
-                component={Settings}
-                options={{
-                  tabBarActiveTintColor: 'tomato',
-                  tabBarInactiveTintColor: 'gray'
-                }}
-              />
-            </TabNavigator>
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <TabNavigator Tab={Tab}>
+                <Tab.Screen
+                  name='Restaurants'
+                  component={RestaurantsScreen}
+                  options={{
+                    tabBarActiveTintColor: 'tomato',
+                    tabBarInactiveTintColor: 'gray'
+                  }}
+                />
+                <Tab.Screen
+                  name='Map'
+                  component={Map}
+                  options={{
+                    tabBarActiveTintColor: 'tomato',
+                    tabBarInactiveTintColor: 'gray'
+                  }}
+                />
+                <Tab.Screen
+                  name='Settings'
+                  component={Settings}
+                  options={{
+                    tabBarActiveTintColor: 'tomato',
+                    tabBarInactiveTintColor: 'gray'
+                  }}
+                />
+              </TabNavigator>
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider >
       <ExpoStatusBar style='auto' />
     </>
