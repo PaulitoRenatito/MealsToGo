@@ -24,11 +24,12 @@ export const LocationContextProvider = ({ children }: { children: ReactNode }) =
 
         if (!searchKeyword.length) return;
 
-        locationRequest(searchKeyword.toLowerCase() as LocationKey)
+        locationRequest(searchKeyword.toLowerCase().trim() as LocationKey)
             .then(locationTransform)
             .then((result) => {
                 setIsLoading(false);
                 setLocation(result);
+                
             })
             .catch((error) => {
                 setIsLoading(false);

@@ -50,7 +50,7 @@ export const locations: Record<LocationKey, LocationData> = {
             {
                 geometry: {
                     location: {
-                        lat: 41.8781136,
+                        lat: 41.878113,
                         lng: -87.6297982
                     },
                     viewport: {
@@ -72,8 +72,8 @@ export const locations: Record<LocationKey, LocationData> = {
             {
                 geometry: {
                     location: {
-                        lat: 43.65107,
-                        lng: -79.347015
+                        lat: 43.653225,
+                        lng: -79.383186
                     },
                     viewport: {
                         northeast: {
