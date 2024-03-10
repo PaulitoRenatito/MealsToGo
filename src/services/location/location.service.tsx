@@ -12,10 +12,20 @@ export const locationRequest = (searchTerm: LocationKey): Promise<LocationData> 
     })
 }
 
-export const locationTransform = (result: LocationData): LatLng => {
+export const locationTransform = (result: LocationData): LocationData => {
     const formattedResonse = camelize(result);
     const { geometry } = formattedResonse.results[0];
-    const { lat, lng } = geometry.location;
 
-    return { lat, lng };
+    const { location, viewport } = geometry;
+
+    const transformedData: LocationData = {
+        results: [{
+            geometry: {
+                location: location,
+                viewport: viewport
+            }
+        }]
+    };
+
+    return transformedData;
 };

@@ -1,9 +1,9 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { LatLng, LocationKey } from "./types";
+import { LatLng, LocationData, LocationKey } from "./types";
 import { locationRequest, locationTransform } from "./location.service";
 
 interface LocationContextType {
-    location: LatLng | null;
+    location: LocationData | null;
     isLoading: boolean;
     error: any;
     search: (searchKeyword: string) => void;
@@ -13,7 +13,7 @@ export const LocationContext = createContext<LocationContextType | null>(null);
 
 export const LocationContextProvider = ({ children }: { children: ReactNode }) => {
 
-    const [location, setLocation] = useState<LatLng | null>(null);
+    const [location, setLocation] = useState<LocationData | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<any>(null);
     const [keyword, setKeyword] = useState<string>("san francisco");

@@ -36,7 +36,7 @@ export const RestaurantsContextProvider = ({ children }: { children: ReactNode }
 
     useEffect(() => {
         if (!location) return;
-        const locationString = `${location.lat},${location.lng}`;
+        const locationString = `${location.results[0].geometry.location.lat},${location.results[0].geometry.location.lng}`;
         retriveRestaurants(locationString);
     }, [location]);
 
