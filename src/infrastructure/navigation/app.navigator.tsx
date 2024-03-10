@@ -4,10 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeArea } from '../../components/safe-area.component';
 import { Text } from 'react-native';
 import { RestaurantNavigator } from './restaurants.navigator';
+import { MapScreen } from '../../features/map/screens/map.screen';
 
 const Tab = createBottomTabNavigator();
-
-const Map = () => <SafeArea><Text>Map</Text></SafeArea>
 const Settings = () => <SafeArea><Text>Settings</Text></SafeArea>
 
 export const AppNavigator = () => {
@@ -24,7 +23,7 @@ export const AppNavigator = () => {
                 />
                 <Tab.Screen
                     name='Map'
-                    component={Map}
+                    component={MapScreen}
                     options={{
                         tabBarActiveTintColor: 'tomato',
                         tabBarInactiveTintColor: 'gray'

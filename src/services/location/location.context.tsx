@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useEffect, useState } from "react";
-import { LatLng, LocationData, LocationKey } from "./types";
+import { LatLng, LocationKey } from "./types";
 import { locationRequest, locationTransform } from "./location.service";
 
 interface LocationContextType {
@@ -21,8 +21,6 @@ export const LocationContextProvider = ({ children }: { children: ReactNode }) =
     const onSearch = (searchKeyword: string) => {
         setIsLoading(true);
         setKeyword(searchKeyword);
-
-
     }
 
     useEffect(() => {

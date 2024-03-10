@@ -8,6 +8,10 @@ import { LocationKey } from "../../../services/location/types";
 
 const SearchContainer = styled(View)`
     padding: ${({ theme }) => theme.space.px16};
+    position: absolute;
+    z-index: 999;
+    top: 40;
+    width: 100%;
 `
 
 export const Search = () => {
@@ -16,14 +20,15 @@ export const Search = () => {
 
     const [searchKeyword, setSearchKeyword] = useState(keyword);
 
-    useEffect(() => {
+    useEffect(()=> {
         setSearchKeyword(keyword);
-    }, [keyword]);
+    },[keyword]);
 
     return (
         <SearchContainer>
             <Searchbar
                 placeholder="Search for a location"
+                icon='map'
                 onChangeText={setSearchKeyword}
                 value={searchKeyword}
                 onSubmitEditing={() => {
