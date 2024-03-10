@@ -1,8 +1,8 @@
 import { locations } from "./location.mock"
 import camelize, { Camelize } from "camelize-ts";
-import { LatLng, LocationData, LocationKey } from "./types";
+import { LatLng, LocationData, LocationKey, LocationMockData } from "./types";
 
-export const locationRequest = (searchTerm: LocationKey): Promise<LocationData> => {
+export const locationRequest = (searchTerm: LocationKey): Promise<LocationMockData> => {
     return new Promise((resolve, reject) => {
         const locationMock = locations[searchTerm];
         if (!locationMock) {
@@ -12,19 +12,15 @@ export const locationRequest = (searchTerm: LocationKey): Promise<LocationData> 
     })
 }
 
-export const locationTransform = (result: LocationData): LocationData => {
+export const locationTransform = (result: LocationMockData): LocationData => {
     const formattedResonse = camelize(result);
     const { geometry } = formattedResonse.results[0];
 
     const { location, viewport } = geometry;
 
     const transformedData: LocationData = {
-        results: [{
-            geometry: {
-                location: location,
-                viewport: viewport
-            }
-        }]
+        location: location,
+        viewport: viewport
     };
 
     return transformedData;

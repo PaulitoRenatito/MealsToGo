@@ -1,6 +1,6 @@
-import { LocationKey, LocationData } from "./types";
+import { LocationKey, LocationMockData } from "./types";
 
-export const locations: Record<LocationKey, LocationData> = {
+export const locations: Record<LocationKey, LocationMockData> = {
     antwerp: {
         results: [
             {

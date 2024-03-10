@@ -16,7 +16,7 @@ export const MapScreen = () => {
     const { restaurants = [] } = useContext(RestaurantsContext)!;
 
     const [latDelta, setlatDelta] = useState(0);
-    const { location: { lat, lng }, viewport } = location!.results[0]?.geometry;
+    const { location: { lat, lng }, viewport } = location!;
 
     useEffect(() => {
         const northeastLat = viewport.northeast.lat;
