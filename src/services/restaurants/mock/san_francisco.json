@@ -8,7 +8,13 @@
             "opening_hours": {
                 "open_now": true
             },
-            "business_status": "OPERATIONAL"
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 37.774929,
+                    "lng": -122.419415
+                }
+            }
         },
         {
             "name": "Restaurant San Francisco 2",
@@ -18,7 +24,13 @@
             "opening_hours": {
                 "open_now": false
             },
-            "business_status": "CLOSED_TEMPORARILY"
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 37.789412,
+                    "lng": -122.403465
+                }
+            }
         },
         {
             "name": "Restaurant San Francisco 3",
@@ -28,7 +40,13 @@
             "opening_hours": {
                 "open_now": true
             },
-            "business_status": "OPERATIONAL"
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 37.789132,
+                    "lng": -122.403785
+                }
+            }
         },
         {
             "name": "Restaurant San Francisco 4",
@@ -38,7 +56,13 @@
             "opening_hours": {
                 "open_now": false
             },
-            "business_status": "CLOSED_TEMPORARILY"
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 37.783412,
+                    "lng": -122.401465
+                }
+            }
         },
         {
             "name": "Restaurant San Francisco 5",
@@ -48,7 +72,13 @@
             "opening_hours": {
                 "open_now": true
             },
-            "business_status": "OPERATIONAL"
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 37.789420,
+                    "lng": -122.413465
+                }
+            }
         }
     ]
 }

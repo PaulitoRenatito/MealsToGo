@@ -8,7 +8,13 @@
             "opening_hours": {
                 "open_now": true
             },
-            "business_status": "OPERATIONAL"
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 41.878564,
+                    "lng": -87.640656
+                }
+            }
         },
         {
             "name": "Restaurant Chicago 2",
@@ -18,7 +24,13 @@
             "opening_hours": {
                 "open_now": false
             },
-            "business_status": "OPERATIONAL"
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 41.891873,
+                    "lng": -87.625425
+                }
+            }
         }
     ]
 }

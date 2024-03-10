@@ -8,7 +8,13 @@
             "opening_hours": {
                 "open_now": true
             },
-            "business_status": "OPERATIONAL"
+            "business_status": "OPERATIONAL",
+            "geometry": {
+                "location": {
+                    "lat": 51.219448,
+                    "lng": 4.402464
+                }
+            }
         },
         {
             "name": "Restaurant Antwerp 2",
@@ -18,7 +24,13 @@
             "opening_hours": {
                 "open_now": false
             },
-            "business_status": "CLOSED_TEMPORARILY"
+            "business_status": "CLOSED_TEMPORARILY",
+            "geometry": {
+                "location": {
+                    "lat": 51.217122,
+                    "lng": 4.400994
+                }
+            }
         }
     ]
 }
