@@ -2,6 +2,7 @@ import { Image, Platform, View } from "react-native"
 import styled from "styled-components/native"
 import { Text } from "../typography/text.component"
 import WebView from "react-native-webview"
+import { Restaurant } from "../../services/restaurants/mock/types"
 
 const CompactImage = styled(Image)`
     border-radius: 10px;
@@ -22,7 +23,7 @@ const Item = styled(View)`
 const isAndroid = Platform.OS === "android"
 
 interface CompactRestaurantInfoProps {
-    restaurant: any
+    restaurant: Restaurant
 }
 export default function CompactRestaurantInfo({ restaurant }: CompactRestaurantInfoProps) {
 

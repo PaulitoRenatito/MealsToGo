@@ -33,6 +33,8 @@ export const RestaurantsScreen = () => {
     const navigation = useNavigation<restaurantsScreenProps>();
 
     const { restaurants, isLoading } = useContext(RestaurantsContext)!;
+    const { favourites } = useContext(FavouritesContext)!;
+
     const [isToggled, setIsToggled] = useState(false);
 
     return (
@@ -50,7 +52,7 @@ export const RestaurantsScreen = () => {
                 isFavouritesToggled={isToggled}
                 onFavouritesToggled={() => setIsToggled(!isToggled)}
             />
-            {isToggled && <FavouritesBar />}
+            {isToggled && <FavouritesBar favourites={favourites!} onItemPress={navigation.navigate} />}
             <FlatList
                 data={restaurants}
                 renderItem={({ item }) => {

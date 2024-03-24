@@ -2,9 +2,9 @@ import { ReactNode, createContext, useState } from "react";
 import { Restaurant } from "../restaurants/mock/types";
 
 interface FavouritesContextProps {
-    favourites: any | null;
-    addToFavourites: (restaurant: any) => void;
-    removeFromFavourites: (restaurant: any) => void;
+    favourites: Restaurant[] | null;
+    addToFavourites: (restaurant: Restaurant) => void;
+    removeFromFavourites: (restaurant: Restaurant) => void;
 };
 export const FavouritesContext = createContext<FavouritesContextProps | null>(null);
 
