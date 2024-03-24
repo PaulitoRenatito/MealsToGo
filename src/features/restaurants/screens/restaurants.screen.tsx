@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import {
     FlatList,
     TouchableOpacity,
@@ -14,6 +14,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RestaurantsStackParamList } from '../../../infrastructure/navigation/restaurants.navigator';
 import { useNavigation } from '@react-navigation/native';
 import { FavouritesContext } from '../../../services/favourites/favourites.context';
+import FavouritesBar from '../../../components/favourite/favourites-bar.component';
 
 const Loading = styled(ActivityIndicator)`
     margin-left: -25px;
@@ -32,6 +33,7 @@ export const RestaurantsScreen = () => {
     const navigation = useNavigation<restaurantsScreenProps>();
 
     const { restaurants, isLoading } = useContext(RestaurantsContext)!;
+    const [isToggled, setIsToggled] = useState(false);
 
     return (
         <SafeArea>
@@ -44,7 +46,11 @@ export const RestaurantsScreen = () => {
                     />
                 </LoadingContainer>
             )}
-            <Search />
+            <Search
+                isFavouritesToggled={isToggled}
+                onFavouritesToggled={() => setIsToggled(!isToggled)}
+            />
+            {isToggled && <FavouritesBar />}
             <FlatList
                 data={restaurants}
                 renderItem={({ item }) => {

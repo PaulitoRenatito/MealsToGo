@@ -10,7 +10,11 @@ const SearchContainer = styled(View)`
     padding: ${({ theme }) => theme.space.px16};
 `
 
-export const Search = () => {
+interface SearchProps {
+    isFavouritesToggled: boolean;
+    onFavouritesToggled: () => void;
+}
+export const Search = ({ isFavouritesToggled, onFavouritesToggled }: SearchProps) => {
 
     const { keyword, search } = useContext(LocationContext)!;
 
@@ -26,6 +30,8 @@ export const Search = () => {
                 placeholder="Search for a location"
                 onChangeText={setSearchKeyword}
                 value={searchKeyword}
+                icon={isFavouritesToggled ? "heart" : "heart-outline"}
+                onIconPress={onFavouritesToggled}
                 onSubmitEditing={() => {
                     search(searchKeyword);
                 }}
