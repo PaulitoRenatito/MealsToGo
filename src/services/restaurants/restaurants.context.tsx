@@ -1,9 +1,10 @@
 import React, { ReactNode, createContext, lazy, useContext, useEffect, useState } from "react";
 import { restaurantsRequest, restaurantsTransform } from "./restaurants.service";
 import { LocationContext } from "../location/location.context";
+import { Restaurant } from "./mock/types";
 
 interface RestaurantsContextType {
-    restaurants: any[];
+    restaurants: Restaurant[];
     isLoading: boolean;
     error: any;
 };
@@ -11,7 +12,7 @@ export const RestaurantsContext = createContext<RestaurantsContextType | null>(n
 
 export const RestaurantsContextProvider = ({ children }: { children: ReactNode }) => {
 
-    const [restaurants, setRestaurants] = useState<any[]>([]);
+    const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<any>(null);
 

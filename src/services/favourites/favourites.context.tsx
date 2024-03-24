@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
+import { Restaurant } from "../restaurants/mock/types";
 
 interface FavouritesContextProps {
     favourites: any | null;
@@ -12,15 +13,15 @@ interface FavouritesContextProviderProps {
 }
 export const FavouritesContextProvider = ({ children }: FavouritesContextProviderProps) => {
 
-    const [favourites, setFavourites] = useState<any[]>([]);
+    const [favourites, setFavourites] = useState<Restaurant[]>([]);
 
-    const add = (restaurant: any) => {
+    const add = (restaurant: Restaurant) => {
         setFavourites([...favourites, restaurant]);
     }
 
-    const remove = (restaurant: any) => {
+    const remove = (restaurant: Restaurant) => {
         const newFavourites = favourites.filter(
-            (x: any) => x.name !== restaurant.name
+            (x: Restaurant) => x.name !== restaurant.name
         );
 
         setFavourites(newFavourites);
