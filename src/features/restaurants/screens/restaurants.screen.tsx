@@ -13,6 +13,7 @@ import { Search } from '../components/search.component';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RestaurantsStackParamList } from '../../../infrastructure/navigation/restaurants.navigator';
 import { useNavigation } from '@react-navigation/native';
+import { FavouritesContext } from '../../../services/favourites/favourites.context';
 
 const Loading = styled(ActivityIndicator)`
     margin-left: -25px;
@@ -30,7 +31,7 @@ export const RestaurantsScreen = () => {
 
     const navigation = useNavigation<restaurantsScreenProps>();
 
-    const { restaurants, isLoading, error } = useContext(RestaurantsContext)!;
+    const { restaurants, isLoading } = useContext(RestaurantsContext)!;
 
     return (
         <SafeArea>

@@ -12,7 +12,7 @@ interface FavouritesContextProviderProps {
 }
 export const FavouritesContextProvider = ({ children }: FavouritesContextProviderProps) => {
 
-    const [favourites, setFavourites] = useState<any>([]);
+    const [favourites, setFavourites] = useState<any[]>([]);
 
     const add = (restaurant: any) => {
         setFavourites([...favourites, restaurant]);
@@ -20,7 +20,7 @@ export const FavouritesContextProvider = ({ children }: FavouritesContextProvide
 
     const remove = (restaurant: any) => {
         const newFavourites = favourites.filter(
-            (x: any) => x.placeId !== restaurant.placeId
+            (x: any) => x.name !== restaurant.name
         );
 
         setFavourites(newFavourites);

@@ -12,6 +12,7 @@ import {
     Rating,
     OpenIndicator,
 } from "./restaurant-info-card.styles"
+import Favourite from "../../../components/favourite/favourite.component";
 
 interface RestaurantInfoCardProps {
     restaurant?: {
@@ -39,6 +40,7 @@ export const RestaurantInfoCard: React.FC<RestaurantInfoCardProps> = ({ restaura
 
     return (
         <RestaurantCard elevation={5}>
+            <Favourite restaurant={restaurant} />
             <RestaurantCardCover source={{ uri: photos[0] }} />
             <Info>
                 <Text variant="label">{name}</Text>
