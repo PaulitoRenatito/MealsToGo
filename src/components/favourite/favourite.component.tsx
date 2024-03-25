@@ -26,7 +26,7 @@ export default function Favourite({ restaurant }: FavouriteProps) {
         removeFromFavourites,
     } = useContext(FavouritesContext)!;
 
-    const isFavourites = favourites.find((r: Restaurant) => r.name === restaurant.name);
+    const isFavourites = favourites!.find((r: Restaurant) => r.name === restaurant.name);
 
     return (
         <FavouriteButton

@@ -17,8 +17,6 @@ import { AuthenticationContextProvider } from './src/services/authentication/aut
 
 export default function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
@@ -28,8 +26,6 @@ export default function App() {
   });
 
   if (!oswaldLoaded || !latoLoaded) return null;
-
-  if (!isAuthenticated) return null;
 
   return (
     <>

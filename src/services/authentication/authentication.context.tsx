@@ -6,7 +6,8 @@ interface AuthenticationContextType {
     user: UserCredential | null;
     isLoading: boolean;
     error: any;
-    onLogin: (email: string, password: string) => void;
+    isAuthenticated: boolean;
+    login: (email: string, password: string) => void;
 };
 export const AuthenticationContext = createContext<AuthenticationContextType | null>(null);
 
@@ -15,16 +16,19 @@ export const AuthenticationContextProvider = ({ children }: { children: ReactNod
     const [user, setUser] = useState<UserCredential | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<any>(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const onLogin = (email: string, password: string) => {
         setIsLoading(true);
         loginRequest(email, password)
         .then((u) => {
             setUser(u);
+            setIsAuthenticated(true);
             setIsLoading(false);
         })
         .catch((e) => {
             setIsLoading(false);
+            setIsAuthenticated(false);
             setError(e);
         });
     }
@@ -35,7 +39,8 @@ export const AuthenticationContextProvider = ({ children }: { children: ReactNod
                 user,
                 isLoading,
                 error,
-                onLogin,
+                isAuthenticated,
+                login: onLogin,
             }}
         >
             {children}
