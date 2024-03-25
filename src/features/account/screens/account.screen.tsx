@@ -26,7 +26,7 @@ export default function AccountScreen(props: AccountScreenProps) {
                     Login
                 </AuthButton>
                 <AuthButton
-                    icon='lock-open-outline'
+                    icon='email'
                     mode="contained"
                     onPress={() => navigation.navigate('Register')}
                 >

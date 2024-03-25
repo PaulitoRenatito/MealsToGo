@@ -1,7 +1,7 @@
 import { ImageBackground, View } from "react-native";
 import styled from "styled-components/native";
 import { colors } from "../../../infrastructure/theme/colors";
-import { Button } from "react-native-paper";
+import { Button, TextInput } from "react-native-paper";
 
 
 export const AccountBackground = styled(ImageBackground).attrs({
@@ -32,4 +32,11 @@ export const AuthButton = styled(Button).attrs({
     margin-top: 4px;
     margin-bottom: 4px;
     padding: ${(props) => props.theme.space.px4};
+`
+
+export const AuthInput = styled(TextInput).attrs({
+})`
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 200px;
 `

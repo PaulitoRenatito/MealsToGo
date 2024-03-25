@@ -15,7 +15,7 @@ export const AuthenticationContextProvider = ({ children }: { children: ReactNod
 
     const [user, setUser] = useState<UserCredential | null>(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState<any>(null);
+    const [error, setError] = useState<string>("");
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const onLogin = (email: string, password: string) => {
@@ -29,7 +29,7 @@ export const AuthenticationContextProvider = ({ children }: { children: ReactNod
         .catch((e) => {
             setIsLoading(false);
             setIsAuthenticated(false);
-            setError(e);
+            setError(e.toString());
         });
     }
 
