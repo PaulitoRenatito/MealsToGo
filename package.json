@@ -13,6 +13,7 @@
     "@expo-google-fonts/lato": "^0.2.3",
     "@expo-google-fonts/montserrat": "^0.2.3",
     "@expo-google-fonts/oswald": "^0.2.3",
+    "@react-native-async-storage/async-storage": "1.21.0",
     "@react-navigation/bottom-tabs": "^6.5.14",
     "@react-navigation/native": "^6.1.12",
     "@react-navigation/stack": "^6.3.25",
@@ -21,6 +22,7 @@
     "expo": "^50.0.8",
     "expo-font": "~11.10.3",
     "expo-status-bar": "~1.11.1",
+    "firebase": "^10.9.0",
     "react": "18.2.0",
     "react-native": "^0.73.6",
     "react-native-gesture-handler": "~2.14.0",
@@ -30,8 +32,7 @@
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
     "react-native-webview": "^13.6.4",
-    "styled-components": "^6.1.8",
-    "@react-native-async-storage/async-storage": "1.21.0"
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
