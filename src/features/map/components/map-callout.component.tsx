@@ -5,6 +5,6 @@ interface MapCalloutProps {
 }
 export default function MapCallout({ restaurant }: MapCalloutProps) {
     return (
-        <CompactRestaurantInfo restaurant={restaurant} />
+        <CompactRestaurantInfo restaurant={restaurant} isMap />
     )
 }
