@@ -1,12 +1,19 @@
 import { useContext, useState } from "react";
-import { AccountBackground, AccountContainer, AccountCover, AuthButton, AuthInput } from "../components/account.styles";
+import { AccountBackground, AccountContainer, AccountCover, AuthButton, AuthInput, ErrorContainer, ErrorText, Title } from "../components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
 import { Text } from "react-native";
+import { AccountStackParamList } from "../../../infrastructure/navigation/account.navigator";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { useNavigation } from "@react-navigation/native";
+
+type accountScreenProps = StackNavigationProp<AccountStackParamList, 'Login'>;
 
 interface LoginScreenProps {
 
 }
 export default function LoginScreen(props: LoginScreenProps) {
+
+    const navigation = useNavigation<accountScreenProps>();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -15,6 +22,7 @@ export default function LoginScreen(props: LoginScreenProps) {
     return (
         <AccountBackground>
             <AccountCover />
+            <Title>Meals To Go</Title>
             <AccountContainer>
                 <AuthInput
                     label="Email"
@@ -32,7 +40,7 @@ export default function LoginScreen(props: LoginScreenProps) {
                     autoCapitalize="none"
                     onChangeText={(p) => setPassword(p)}
                 />
-                {error && <Text>{error}</Text>}
+                {error && <ErrorContainer><ErrorText>{error}</ErrorText></ErrorContainer>}
                 <AuthButton
                     icon="lock-open-outline"
                     mode="contained"
@@ -41,6 +49,12 @@ export default function LoginScreen(props: LoginScreenProps) {
                     Login
                 </AuthButton>
             </AccountContainer>
+            <AuthButton
+                mode="contained"
+                onPress={() => navigation.goBack()}
+            >
+                Back
+            </AuthButton>
         </AccountBackground>
     )
 }
