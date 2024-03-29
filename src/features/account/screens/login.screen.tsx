@@ -1,19 +1,18 @@
 import { useContext, useState } from "react";
 import { AccountBackground, AccountContainer, AccountCover, AuthButton, AuthInput, ErrorContainer, ErrorText, Title } from "../components/account.styles";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
-import { Text } from "react-native";
 import { AccountStackParamList } from "../../../infrastructure/navigation/account.navigator";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 
-type accountScreenProps = StackNavigationProp<AccountStackParamList, 'Login'>;
+type loginScreenProps = StackNavigationProp<AccountStackParamList, 'Login'>;
 
 interface LoginScreenProps {
 
 }
 export default function LoginScreen(props: LoginScreenProps) {
 
-    const navigation = useNavigation<accountScreenProps>();
+    const navigation = useNavigation<loginScreenProps>();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
