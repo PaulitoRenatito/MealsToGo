@@ -4,6 +4,7 @@ import { AuthenticationContext } from "../../../services/authentication/authenti
 import { AccountStackParamList } from "../../../infrastructure/navigation/account.navigator";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 
 type loginScreenProps = StackNavigationProp<AccountStackParamList, 'Login'>;
 
@@ -16,7 +17,7 @@ export default function LoginScreen(props: LoginScreenProps) {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { login, error } = useContext(AuthenticationContext)!;
+    const { login, isLoading, error } = useContext(AuthenticationContext)!;
 
     return (
         <AccountBackground>
@@ -40,13 +41,21 @@ export default function LoginScreen(props: LoginScreenProps) {
                     onChangeText={(p) => setPassword(p)}
                 />
                 {error && <ErrorContainer><ErrorText>{error}</ErrorText></ErrorContainer>}
-                <AuthButton
-                    icon="lock-open-outline"
-                    mode="contained"
-                    onPress={() => login(email, password)}
-                >
-                    Login
-                </AuthButton>
+                {!isLoading ?
+                    (
+                        <AuthButton
+                            icon="lock-open-outline"
+                            mode="contained"
+                            onPress={() => login(email, password)}
+                        >
+                            Login
+                        </AuthButton>
+                    )
+                    :
+                    (
+                        <ActivityIndicator animating color={MD2Colors.blue300} />
+                    )
+                }
             </AccountContainer>
             <AuthButton
                 mode="contained"

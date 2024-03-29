@@ -4,6 +4,7 @@ import { AccountBackground, AccountContainer, AccountCover, AuthButton, AuthInpu
 import { useNavigation } from "@react-navigation/native";
 import { useContext, useState } from "react";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
+import { ActivityIndicator, MD2Colors } from "react-native-paper";
 
 type registerScreenProps = StackNavigationProp<AccountStackParamList, 'Register'>;
 
@@ -17,7 +18,7 @@ export default function RegisterScreen(props: RegisterScreenProps) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [repeatedPassword, setRepeatedPassword] = useState("");
-    const { register, error } = useContext(AuthenticationContext)!;
+    const { register, isLoading, error } = useContext(AuthenticationContext)!;
 
     return (
         <AccountBackground>
@@ -49,13 +50,21 @@ export default function RegisterScreen(props: RegisterScreenProps) {
                     onChangeText={(r) => setRepeatedPassword(r)}
                 />
                 {error && <ErrorContainer><ErrorText>{error}</ErrorText></ErrorContainer>}
-                <AuthButton
-                    icon="email"
-                    mode="contained"
-                    onPress={() => register(email, password, repeatedPassword)}
-                >
-                    Register
-                </AuthButton>
+                {!isLoading ?
+                    (
+                        <AuthButton
+                            icon="email"
+                            mode="contained"
+                            onPress={() => register(email, password, repeatedPassword)}
+                        >
+                            Register
+                        </AuthButton>
+                    )
+                    :
+                    (
+                        <ActivityIndicator animating color={MD2Colors.blue300} />
+                    )
+                }
             </AccountContainer>
             <AuthButton
                 mode="contained"
