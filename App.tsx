@@ -1,7 +1,7 @@
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { ThemeProvider } from 'styled-components';
 
-import './firebase.config';
+import './firebaseConfig';
 
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald'
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato'
